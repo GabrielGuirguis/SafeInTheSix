@@ -1,0 +1,1 @@
+sampleUrl = 'https://services.arcgis.com/S9th0jAJ7bqgIRjw/arcgis/rest/services/YTD_CRIME_WM/FeatureServer/0/query?where=1=1&outFields=*&f=json&resultRecordCount=100'
