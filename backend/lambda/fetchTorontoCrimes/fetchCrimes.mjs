@@ -12,10 +12,10 @@ export const fetchCrimeData = async (numCrimes) => {
     const attr = crime.attributes;
     return {
       id: attr.EVENT_UNIQUE_ID,
-      type: attr.CRIME_TYPE,
+      crimeType: attr.CRIME_TYPE,
       lat: attr.LAT_WGS84,
       lng: attr.LONG_WGS84,
-      timestamp: attr.OCC_DATE_EST,
+      reportedAt: attr.OCC_DATE_EST,
       hour: attr.HOUR,
       neighbourhood: attr.NEIGHBOURHOOD_140,
       buildingType: attr.LOCATION_CATEGORY,

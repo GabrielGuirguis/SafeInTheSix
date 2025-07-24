@@ -18,9 +18,9 @@ export const insertCrimeData = async (crimes) => {
 
     const insertPayload = validCrimes.map((crime) => ({
             id: crime.id,
-            type: crime.type,
+            crime_type: crime.type,
             location: `POINT(${crime.lng} ${crime.lat})`,
-            timestamp: new Date(crime.timestamp).toISOString(),
+            reported_at: new Date(crime.reportedAt).toISOString(),
             hour_of_day: crime.hour,
             neighbourhood: crime.neighbourhood,
             building_type: crime.buildingType
