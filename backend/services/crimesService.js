@@ -27,4 +27,17 @@ const getCrimes = async (lat, lng, radius) => {
   return data;
 };
 
-module.exports = getCrimes;
+const getCrimesHeatmap = async (since) => {
+  const { data, error } = await supabaseClient.rpc("get_crimes_density_since", {
+    since
+  });
+
+  if (error) {
+    console.error("Error calling get_crimes_density_since:", error);
+    return null;
+  }
+
+  return data;
+};
+
+module.exports = { getCrimes: getCrimes, getCrimesHeatmap: getCrimesHeatmap }
