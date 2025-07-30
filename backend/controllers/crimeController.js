@@ -1,4 +1,4 @@
-const getCrimes = require("../services/crimesService");
+const { getCrimes } = require("../services/crimesService");
 
 const crimesController = async (req, res) => {
   try {
