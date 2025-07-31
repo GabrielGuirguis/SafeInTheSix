@@ -1,7 +1,8 @@
 const { getCrimesHeatmap } = require("../services/crimesService");
 
 const crimesHeatmapController = async (req, res) => {
-    const millisecondsInWeek = 1000 * 60 * 60 * 24 * 20
+
+    const millisecondsInWeek = 1000 * 60 * 60 * 24 * 7
     const since = req.query.since || new Date(Date.now() - millisecondsInWeek)
 
     try {
