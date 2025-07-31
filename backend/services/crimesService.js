@@ -1,15 +1,21 @@
 const supabaseClient = require("../config/supabaseConfig");
-const redisClient = require("../config/redisConfig");
+const {redisClient, redisAvailable} = require("../config/redisConfig");
 
 const getCrimes = async (lat, lng, radius) => {
   const roundedLat = Math.round(lat * 100) / 100;
   const roundedLng = Math.round(lng * 100) / 100;
   const cacheKey = `crimes:${roundedLat}:${roundedLng}`;
 
-  const cached = await redisClient.get(cacheKey);
-  if (cached) {
-    console.log("cache hit");
-    return JSON.parse(cached);
+  if (redisAvailable) {
+    try {
+      const cached = await redisClient.get(cacheKey);
+      if (cached) {
+        console.log("cache hit");
+        return JSON.parse(cached);
+      }
+    } catch (err) {
+      console.error("redis get failed", err);
+    }
   }
 
   const { data, error } = await supabaseClient.rpc("get_crimes_nearby", {
@@ -23,7 +29,14 @@ const getCrimes = async (lat, lng, radius) => {
     return null;
   }
 
-  await redisClient.set(cacheKey, JSON.stringify(data), { EX: 60 * 15 });
+  if (redisAvailable) {
+    try {
+      await redisClient.set(cacheKey, JSON.stringify(data), { EX: 60 * 15 });
+    } catch (err) {
+      console.error("Redis set failed", err)
+    }
+  }
+  
   return data;
 };
 

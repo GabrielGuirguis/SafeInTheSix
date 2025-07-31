@@ -1,9 +1,24 @@
 const { createClient } = require("redis");
 
 const redisClient = createClient();
+let redisAvailable = false;
 
-redisClient.on("error", (err) => console.log("Redis Client Error", err));
+redisClient.on("error", (err) => {
+  console.error("Redis Client Error", err);
+  redisAvailable = false;
+});
 
-redisClient.connect()
+redisClient.on("connect", () => {
+  console.log("Redis connected");
+  redisAvailable = true;
+});
 
-module.exports = redisClient;
+redisClient.connect().catch((err) => {
+  console.error("Failed to connect to Redis:", err);
+  redisAvailable = false;
+});
+
+module.exports = {
+  redisClient,
+  redisAvailable: () => redisAvailable
+};
