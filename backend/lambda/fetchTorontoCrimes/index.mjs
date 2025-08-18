@@ -3,7 +3,7 @@ import { insertCrimeData } from './db.mjs'
 
 export const handler = async () => {
   
-  const crimes = await fetchCrimeData(50);
+  const crimes = await fetchCrimeData(30);
   await insertCrimeData(crimes);
 };
 
