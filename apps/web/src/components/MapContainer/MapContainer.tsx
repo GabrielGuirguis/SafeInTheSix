@@ -32,7 +32,6 @@ export const MapContainer = () => {
     setSelectionRadius,
     setRecentCalls,
     nearbyCrimes,
-    selectedCrime,
     selectionRadius,
     recentCalls,
   } = useSelectionContext();

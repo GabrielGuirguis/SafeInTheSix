@@ -1,7 +1,6 @@
 import { useSelectionContext } from "../../context/SelectionContext";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { TopBar } from "./TopBar";
 import { ToggleNavbar } from "./NavBar";
 import { CrimeList } from "./CrimeList";
 import { CallsList } from "./CallsList";
