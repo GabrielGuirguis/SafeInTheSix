@@ -4,9 +4,7 @@ const callsController = async (req, res) => {
   try {
 
     const since = req.query.since || new Date(Date.now() - (3 + 5) * 1000 * 60 * 60);
-
     console.log(since)
-
     const crimes = await getCallsToPoliceService(since);
     res.json(crimes);
   } catch (error) {
