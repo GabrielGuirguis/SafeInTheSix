@@ -30,3 +30,8 @@ dist-ssr
 
 # Redis DB
 *.rdb
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
