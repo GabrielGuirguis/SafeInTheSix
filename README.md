@@ -26,3 +26,5 @@ The application consists of:
   - AWS Lambda functions fetch and insert new data (e.g., Toronto Open Data, ArcGIS services)
   - AWS EventBridge schedules periodic ingestion (e.g., every 15 minutes)
   - Data normalized and stored in Postgres
+
+Check it out! https://safe-in-the-six.vercel.app/
