@@ -27,4 +27,6 @@ The application consists of:
   - AWS EventBridge schedules periodic ingestion (e.g., every 15 minutes)
   - Data normalized and stored in Postgres
 
+<img width="480" height="261" alt="image" src="https://github.com/user-attachments/assets/66f5ba05-2c6e-41b1-b8d2-cd8fdc3e6f6c" />
+
 
