@@ -1,4 +1,4 @@
-# <a href="" target="_blank">SafeInTheSix</a>
+# SafeInTheSix
 
 A full-stack application that integrates public safety data (crime reports, police calls, weather alerts, etc.) into an interactive mapping experience.  
 Users can explore safety insights via a **Google Maps heatmap** and view detailed events through a **sidebar panel**.
