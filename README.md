@@ -27,4 +27,4 @@ The application consists of:
   - AWS EventBridge schedules periodic ingestion (e.g., every 15 minutes)
   - Data normalized and stored in Postgres
 
-Check it out! https://safe-in-the-six.vercel.app/
+
